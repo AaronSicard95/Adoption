@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Home Page
+        </title>
+    </head>
+    <body>
+        <h1>Pets</h1>
+        <button onclick="window.location.href='/add'">Add Pet</button>
+        {%for pet in animals%}
+        <img src={{pet.photo_url}}>
+        <p><a href='/{{pet.id}}'>{{pet.name}}</a>
+            {%if pet.available=='true'%}
+                <span style="font-weight: bolder;">is available!</span>
+            {%else%}
+                is <span style="font-weight: bolder;">NOT</span> available.
+            {%endif%}</p>
+        {%endfor%}
+    </body>
+</html>
